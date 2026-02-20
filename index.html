@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VocalSync AI Pro - Calibrated Edition</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>VocalSync AI Pro</h1>
+            <div class="badge">CALIBRATED • ACCURATE DETECTION</div>
+            <p>Advanced Audio Emotion Analysis</p>
+        </header>
+
+        <div class="main-layout">
+            <div class="left-column">
+                <div class="visual-section">
+                    <div class="sphere" id="sphere">
+                        <canvas id="visualizer"></canvas>
+                    </div>
+                    <div class="loader" id="loader"></div>
+                    <div id="status-label" class="status-pill ready">System: Ready</div>
+                </div>
+
+                <button class="btn btn-record" id="record-btn">
+                    <span id="record-icon">🎤</span>
+                    <span id="record-text">Start Live Recording</span>
+                </button>
+
+                <div class="timer" id="timer"></div>
+
+                <div class="divider">OR</div>
+
+                <div class="upload-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">📂</div>
+                    <strong style="display: block; margin-bottom: 8px;">Upload Audio File</strong>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Drag & Drop or click</p>
+                    <input type="file" id="file-input" accept="audio/*">
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="data-card">
+                    <h3>Primary Emotion</h3>
+                    <div id="emotion-output" class="emotion-display">---</div>
+                    <div class="progress-bar">
+                        <div id="confidence-fill"></div>
+                    </div>
+                    <div style="display:flex; justify-content: space-between; font-size: 0.95rem; color: var(--text-muted);">
+                        <span>Confidence Level</span>
+                        <span id="confidence-val" style="color: var(--accent); font-weight: 600;">0%</span>
+                    </div>
+                    <div class="debug-info" id="debug-info">Waiting for audio...</div>
+                </div>
+
+                <div class="data-card">
+                    <h3>Audio Features</h3>
+                    <div class="features-grid" id="features-grid">
+                        <div class="feature-box">
+                            <div class="label">Energy</div>
+                            <div class="value" id="feature-energy">--</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="label">Pitch</div>
+                            <div class="value" id="feature-pitch">--</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="label">Tempo</div>
+                            <div class="value" id="feature-tempo">--</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="label">Variance</div>
+                            <div class="value" id="feature-variance">--</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="label">Stability</div>
+                            <div class="value" id="feature-stability">--</div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="label">ZCR</div>
+                            <div class="value" id="feature-zcr">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-card">
+                    <h3>Top 6 Emotions Detected</h3>
+                    <div class="emotion-chart" id="emotion-chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
