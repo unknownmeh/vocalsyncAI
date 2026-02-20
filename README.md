@@ -1,1 +1,1 @@
-View: Link
+View: https://unknownmeh.github.io/vocalsyncAI/
